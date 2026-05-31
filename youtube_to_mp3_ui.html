@@ -1,0 +1,282 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
+
+  .yt-wrap {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: #0a0a0a;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .yt-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .yt-glow {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff0000 0%, transparent 70%);
+    opacity: 0.06;
+    top: -120px; right: -80px;
+    pointer-events: none;
+  }
+
+  .yt-glow2 {
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff4500 0%, transparent 70%);
+    opacity: 0.05;
+    bottom: -100px; left: -60px;
+    pointer-events: none;
+  }
+
+  .yt-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .yt-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ff000018;
+    border: 0.5px solid #ff000055;
+    border-radius: 99px;
+    padding: 4px 14px 4px 8px;
+  }
+
+  .yt-badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #ff3333;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .yt-badge-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ff5555;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .yt-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    color: #f5f5f5;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  .yt-heading span {
+    color: #ff3333;
+  }
+
+  .yt-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #888;
+    margin: -16px 0 0;
+    letter-spacing: 0.01em;
+  }
+
+  .yt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .yt-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .yt-input-row {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    border: 0.5px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .yt-input-row:focus-within {
+    border-color: #ff3333;
+    box-shadow: 0 0 0 3px #ff000022;
+  }
+
+  .yt-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    background: #151515;
+    color: #555;
+    font-size: 18px;
+    border-right: 0.5px solid #2a2a2a;
+  }
+
+  .yt-input {
+    flex: 1;
+    background: #111;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 14px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #e5e5e5;
+    border-radius: 0 !important;
+  }
+
+  .yt-input::placeholder {
+    color: #444;
+  }
+
+  .yt-btn {
+    background: #ff2222 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0 28px !important;
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-size: 18px !important;
+    letter-spacing: 0.08em !important;
+    color: #fff !important;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 52px;
+  }
+
+  .yt-btn:hover {
+    background: #ff4444 !important;
+  }
+
+  .yt-btn:active {
+    transform: scale(0.97) !important;
+  }
+
+  .yt-footer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .yt-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .yt-stat i {
+    font-size: 14px;
+    color: #444;
+  }
+
+  .yt-waveform {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 24px;
+  }
+
+  .yt-waveform span {
+    width: 3px;
+    background: #ff3333;
+    border-radius: 2px;
+    animation: wave 1.2s ease-in-out infinite;
+    opacity: 0.5;
+  }
+
+  .yt-waveform span:nth-child(1) { height: 8px; animation-delay: 0s; }
+  .yt-waveform span:nth-child(2) { height: 16px; animation-delay: 0.1s; }
+  .yt-waveform span:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+  .yt-waveform span:nth-child(4) { height: 20px; animation-delay: 0.3s; }
+  .yt-waveform span:nth-child(5) { height: 10px; animation-delay: 0.4s; }
+  .yt-waveform span:nth-child(6) { height: 16px; animation-delay: 0.25s; }
+  .yt-waveform span:nth-child(7) { height: 8px; animation-delay: 0.15s; }
+
+  @keyframes wave {
+    0%, 100% { transform: scaleY(1); opacity: 0.5; }
+    50% { transform: scaleY(1.6); opacity: 1; }
+  }
+</style>
+
+<div class="yt-wrap">
+  <div class="yt-noise"></div>
+  <div class="yt-glow"></div>
+  <div class="yt-glow2"></div>
+
+  <div class="yt-card">
+    <div class="yt-badge">
+      <div class="yt-badge-dot"></div>
+      <span class="yt-badge-text">Free converter</span>
+    </div>
+
+    <h1 class="yt-heading">YouTube<br>to <span>MP3</span></h1>
+    <p class="yt-sub">Paste any link. Get your audio in seconds.</p>
+
+    <div class="yt-form">
+      <label class="yt-label" for="yt-url">YouTube URL</label>
+      <div class="yt-input-row">
+        <div class="yt-icon-wrap">
+          <i class="ti ti-brand-youtube" aria-hidden="true"></i>
+        </div>
+        <input
+          class="yt-input"
+          id="yt-url"
+          type="text"
+          placeholder="https://youtube.com/watch?v=..."
+        />
+      </div>
+      <button class="yt-btn" style="margin-top: 4px;">
+        <i class="ti ti-download" aria-hidden="true" style="font-size:16px;"></i>
+        Convert & Download
+      </button>
+    </div>
+
+    <div class="yt-footer">
+      <div class="yt-waveform">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="yt-stat"><i class="ti ti-file-music" aria-hidden="true"></i> MP3 · 320kbps</div>
+      <div class="yt-stat"><i class="ti ti-lock" aria-hidden="true"></i> No signup</div>
+    </div>
+  </div>
+</div>
