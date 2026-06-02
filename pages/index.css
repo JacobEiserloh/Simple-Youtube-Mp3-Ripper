@@ -1,36 +1,95 @@
 html, body {
     margin: 0;
-    height: 100%;
+    background-image: url("../Predator_Wallpaper_5000x2814.jpg");
+    background-size: cover;
 }
 
 .page {
     min-height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.page__header{
+.page__content{
+    width: 800px;
+    height: 800px;
     display: flex;
+    flex-direction: column;
+    gap: 25px;
     justify-content: center;
+    color: white;
+}
+
+.page__title-card{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin: 0;
 }
 
 .page__title{
     margin: 0;
+    width: 50%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 0.08em;
+}
+
+.page__subtitle{
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
 }
 
 .page__form{
-    width: 400px;
-    height: 400px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.page__form-label{
+    color: rgb(255, 255, 255);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+
+}
+
+.page__form-input{
+    width: 100%;
+    height: 42px;
+    border: none;
+    padding: 0px 8px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.page__form-submit{
+    background: #ff2222;
+    border: none;
+    border-radius: 10px;
+    padding: 0 28px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    white-space: nowrap;
+    display: flex;
     align-items: center;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    gap: 20px;
+    gap: 8px;
+    height: 52px;
+    width: 100%;
+
 }
 
 
