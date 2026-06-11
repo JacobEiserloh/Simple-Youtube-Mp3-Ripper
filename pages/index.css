@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    background-image: url("../Predator_Wallpaper_5000x2814.jpg");
+    background-image: url("../images/Background.jpg");
     background-size: cover;
 }
 
@@ -10,7 +10,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .page__content{
